@@ -1,6 +1,6 @@
 ---
 
-sync_app_docker_image: "docker.io/aerogear/voyager-server-example-task"
+sync_app_docker_image: "docker.io/aerogear/voyager-server-example-basic"
 sync_app_docker_image_version: "latest"
 sync_app_health_endpoint: ""
 sync_app_metrics_endpoint: "metrics"
