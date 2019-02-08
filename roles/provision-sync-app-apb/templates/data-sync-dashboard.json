@@ -108,7 +108,7 @@
       "tableColumn": "Value",
       "targets": [
         {
-          "expr": "sum(process_resident_memory_bytes{app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "sum(process_resident_memory_bytes{app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -179,7 +179,7 @@
       "targets": [
         {
           "alias": "",
-          "expr": "avg(process_resident_memory_bytes{app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "avg(process_resident_memory_bytes{app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -187,7 +187,7 @@
           "refId": "A"
         },
         {
-          "expr": "process_resident_memory_bytes{app=\"{{ SYNC_APP_NAME }}\"}",
+          "expr": "process_resident_memory_bytes{app=\"sync-app-{{ SYNC_APP_NAME }}\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Pod {{ kubernetes_pod_name }}",
@@ -299,7 +299,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(rate(process_cpu_user_seconds_total{app=\"{{ SYNC_APP_NAME }}\"}[30s]) * 100)",
+          "expr": "sum(rate(process_cpu_user_seconds_total{app=\"sync-app-{{ SYNC_APP_NAME }}\"}[30s]) * 100)",
           "format": "time_series",
           "intervalFactor": 1,
           "refId": "A"
@@ -366,7 +366,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(rate(process_cpu_user_seconds_total{app=\"{{ SYNC_APP_NAME }}\"}[30s]) * 100)",
+          "expr": "avg(rate(process_cpu_user_seconds_total{app=\"sync-app-{{ SYNC_APP_NAME }}\"}[30s]) * 100)",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -375,7 +375,7 @@
           "refId": "A"
         },
         {
-          "expr": "rate(process_cpu_user_seconds_total{app=\"{{ SYNC_APP_NAME }}\"}[30s]) * 100",
+          "expr": "rate(process_cpu_user_seconds_total{app=\"sync-app-{{ SYNC_APP_NAME }}\"}[30s]) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Pod {{ kubernetes_pod_name }}",
@@ -465,7 +465,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(requests_resolved{operation_type=\"query\", app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "sum(requests_resolved{operation_type=\"query\", app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -474,7 +474,7 @@
           "refId": "A"
         },
         {
-          "expr": "sum(requests_resolved{operation_type=\"mutation\", app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "sum(requests_resolved{operation_type=\"mutation\", app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -566,7 +566,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(resolver_timing_ms_sum{operation_type=\"query\", app=\"{{ SYNC_APP_NAME }}\"} / resolver_timing_ms_count{operation_type=\"query\", app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "avg(resolver_timing_ms_sum{operation_type=\"query\", app=\"sync-app-{{ SYNC_APP_NAME }}\"} / resolver_timing_ms_count{operation_type=\"query\", app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "instant": false,
           "interval": "1s",
@@ -575,7 +575,7 @@
           "refId": "A"
         },
         {
-          "expr": "avg(resolver_timing_ms_sum{operation_type=\"mutation\", app=\"{{ SYNC_APP_NAME }}\"} / resolver_timing_ms_count{operation_type=\"mutation\", app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "avg(resolver_timing_ms_sum{operation_type=\"mutation\", app=\"sync-app-{{ SYNC_APP_NAME }}\"} / resolver_timing_ms_count{operation_type=\"mutation\", app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "instant": false,
           "interval": "1s",
@@ -667,7 +667,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(server_response_ms_sum{request_type=\"POST\", app=\"{{ SYNC_APP_NAME }}\"} / server_response_ms_count{request_type=\"POST\", app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "avg(server_response_ms_sum{request_type=\"POST\", app=\"sync-app-{{ SYNC_APP_NAME }}\"} / server_response_ms_count{request_type=\"POST\", app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -676,7 +676,7 @@
           "refId": "A"
         },
         {
-          "expr": "avg(server_response_ms_sum{request_type=\"GET\", app=\"{{ SYNC_APP_NAME }}\"} / server_response_ms_count{request_type=\"GET\", app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "avg(server_response_ms_sum{request_type=\"GET\", app=\"sync-app-{{ SYNC_APP_NAME }}\"} / server_response_ms_count{request_type=\"GET\", app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "GET",
@@ -763,14 +763,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(requests_resolved{app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "sum(requests_resolved{app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Operations",
           "refId": "A"
         },
         {
-          "expr": "sum(conflicts{app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "sum(conflicts{app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Conflicts",
@@ -862,7 +862,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(conflicts{app=\"{{ SYNC_APP_NAME }}\"}) by (operation_type)",
+          "expr": "sum(conflicts{app=\"sync-app-{{ SYNC_APP_NAME }}\"}) by (operation_type)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -870,7 +870,7 @@
           "refId": "A"
         },
         {
-          "expr": "sum(conflicts{app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "sum(conflicts{app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "All Operation Types",
@@ -961,7 +961,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(conflicts{app=\"{{ SYNC_APP_NAME }}\"}) by (name)",
+          "expr": "sum(conflicts{app=\"sync-app-{{ SYNC_APP_NAME }}\"}) by (name)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -969,7 +969,7 @@
           "refId": "A"
         },
         {
-          "expr": "sum(conflicts{app=\"{{ SYNC_APP_NAME }}\"})",
+          "expr": "sum(conflicts{app=\"sync-app-{{ SYNC_APP_NAME }}\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "All Operation Types",
