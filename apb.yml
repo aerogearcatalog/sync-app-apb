@@ -38,7 +38,7 @@ plans:
         title: Sync Application Docker image version
         default: 'latest'
       - name: SYNC_APP_HEALTH_ENDPOINT
-        description: (default value: '/') Health Endpoint of your Sync Application. Use 'health' for docker.io/aerogear/voyager-server-example-task image.
+        description: (default value: '') Health Endpoint of your Sync Application. Use 'health' for docker.io/aerogear/voyager-server-example-task image.
         type: string
         required: False
         title: Sync Application health endpoint
