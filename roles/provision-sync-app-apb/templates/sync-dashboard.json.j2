@@ -380,7 +380,7 @@
           "expr": "process_resident_memory_bytes{app=\"sync-app-{{ SYNC_APP_NAME }}\"}",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "Pod {{ kubernetes_pod_name }}",
+          "legendFormat": "Pod {{ sync_app_pod_name }}",
           "refId": "B"
         }
       ],
@@ -568,7 +568,7 @@
           "expr": "rate(process_cpu_user_seconds_total{app=\"sync-app-{{ SYNC_APP_NAME }}\"}[30s]) * 100",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "Pod {{ kubernetes_pod_name }}",
+          "legendFormat": "Pod {{ sync_app_pod_name }}",
           "refId": "B"
         }
       ],
@@ -1055,7 +1055,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{name}}",
+          "legendFormat": "{% raw %}{{name}}{% endraw %}",
           "refId": "A"
         },
         {
