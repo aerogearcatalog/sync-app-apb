@@ -160,3 +160,35 @@
       namespace: "{{ namespace }}"
       SYNC_APP_NAME: "{{ SYNC_APP_NAME }}"
   when: encode_asb_binding
+
+- name: Get Sync App Pod Name
+  shell: "oc get pod -l app=sync-app-{{ SYNC_APP_NAME }} -o jsonpath='{.items[*].metadata.name}' -n {{ namespace }}"
+  register: sync_app_pod_name
+
+- set_fact:
+    sync_app_pod_name: sync_app_pod_name.stdout
+    sync_dashboard_filepath: "/tmp/{{ sync_dashboard_filename }}"
+
+- name: Create Sync App Dashboard from template
+  template:
+    src: sync-dashboard.json.j2
+    dest: "{{ sync_dashboard_filepath }}"
+
+- set_fact:
+    sync_dashboard_file_contents: "{{ lookup( 'file', sync_dashboard_filepath ) }}"
+
+- include_role:
+    name: oc-patch-file-to-configmap
+  vars:
+    file_contents: "{{ sync_dashboard_file_contents }}"
+    filename: "{{ sync_dashboard_filename }}"
+    configmap: "{{ dashboards_configmap }}"
+    namespace: "{{ namespace }}"
+
+- block:
+  - name: "Create {{ sync_dashboard_filename }} configmap if metrics-apb is not provisioned yet"
+    shell: oc create configmap '{{ sync_dashboard_filename }}' --from-file={{ sync_dashboard_filename }}={{ sync_dashboard_filepath }} -n '{{ namespace }}'
+  
+  - name: "Apply label 'sync-app-{{ SYNC_APP_NAME }}' to {{ sync_dashboard_filename }} configmap"
+    shell: oc label configmap {{ sync_dashboard_filename }} app=sync-app-{{ SYNC_APP_NAME }} -n {{ namespace }}
+  when: check_configmap.rc != 0 and encode_asb_binding

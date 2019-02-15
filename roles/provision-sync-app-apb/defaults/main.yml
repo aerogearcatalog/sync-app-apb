@@ -4,5 +4,7 @@ sync_app_health_endpoint: "{{ SYNC_APP_HEALTH_ENDPOINT | default('', true) }}"
 sync_app_metrics_endpoint: "{{ SYNC_APP_METRICS_ENDPOINT | default('metrics', true) }}"
 sync_app_graphql_endpoint: "{{ SYNC_APP_GRAPHQL_ENDPOINT | default('graphql', true) }}"
 
-
+# Sync dashboard config
+dashboards_configmap: grafana-dashboards-configmap
+sync_dashboard_filename: "sync-app-{{ SYNC_APP_NAME }}-dashboard.json" # name the file will have inside the config map
 
