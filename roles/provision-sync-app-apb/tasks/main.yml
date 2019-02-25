@@ -161,12 +161,7 @@
       SYNC_APP_NAME: "{{ SYNC_APP_NAME }}"
   when: encode_asb_binding
 
-- name: Get Sync App Pod Name
-  shell: "oc get pod -l app=sync-app-{{ SYNC_APP_NAME }} -o jsonpath='{.items[*].metadata.name}' -n {{ namespace }}"
-  register: sync_app_pod_name
-
 - set_fact:
-    sync_app_pod_name: sync_app_pod_name.stdout
     sync_dashboard_filepath: "/tmp/{{ sync_dashboard_filename }}"
 
 - name: Create Sync App Dashboard from template
