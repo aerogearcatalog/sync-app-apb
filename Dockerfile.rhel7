@@ -226,7 +226,7 @@ X3R5cGU6IGNoZWNrYm94CiAgICAgICAgZGVmYXVsdDogZmFsc2UKICAgICAgICB0aXRsZTogVXNl\
 IFNTTD8KICAgIGJpbmRfcGFyYW1ldGVyczoKICAgICAgLSBuYW1lOiBDTElFTlRfSUQKICAgICAg\
 ICByZXF1aXJlZDogVHJ1ZQogICAgICAgIHRpdGxlOiBNb2JpbGUgQ2xpZW50IElECiAgICAgICAg\
 dHlwZTogc3RyaW5n" \
-      name="mobile/mobile-sync-app-apb" \
+      name="mobile-1-tech-preview/mobile-sync-app-apb" \
       io.k8s.display-name="Mobile Sync App APB" \
       io.k8s.description="An APB that deploys a Sync app on OpenShift through the service catalog, and provides a binding action for mobile use cases" \
       description="An APB that deploys a Sync app on OpenShift through the service catalog, and provides a binding action for mobile use cases" \
