@@ -32,18 +32,13 @@ plans:
         required: True
         title: Sync Application Docker image
       - name: SYNC_APP_DOCKER_IMAGE_VERSION
-        description: "(default value: 'latest') Version of your Sync Application Docker Image"
+        description: "Version of your Sync Application Docker Image"
         type: string
         required: False
         title: Sync Application Docker image version
         default: 'latest'
-      - name: SYNC_APP_HEALTH_ENDPOINT
-        description: "(default value: '') Health Endpoint of your Sync Application. Use 'health' for docker.io/aerogear/voyager-server-example-task image."
-        type: string
-        required: False
-        title: Sync Application health endpoint
       - name: SYNC_APP_METRICS_ENDPOINT
-        description: "(default value: '/metrics') Metrics endpoint of your Sync Application"
+        description: "Metrics endpoint of your Sync Application"
         type: string
         required: False
         title: Sync Application metrics endpoint
@@ -53,11 +48,13 @@ plans:
         type: number
         required: True
         title: Sync App Port
+        default: 4000
       - name: SYNC_APP_GRAPHQL_ENDPOINT
-        description: "(default value: 'graphql') GraphQL Endpoint of your Sync Application"
+        description: "GraphQL Endpoint of your Sync Application"
         type: string
         required: False
         title: Sync App GraphQL Endpoint
+        default: 'graphql'
       - name: DB_HOSTNAME
         description: Hostname of the Database Server
         type: string

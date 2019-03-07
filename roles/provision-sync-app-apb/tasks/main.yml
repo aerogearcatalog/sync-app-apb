@@ -46,12 +46,6 @@
       ports:
         - containerPort: '{{ SYNC_APP_PORT }}'
           protocol: "TCP"
-      readinessProbe:
-        httpGet:
-          path: '/{{ sync_app_health_endpoint }}'
-          port: '{{ SYNC_APP_PORT }}'
-        initialDelaySeconds: 15
-        timeoutSeconds: 1
       env:
       - name: DB_HOSTNAME
         value: "{{ DB_HOSTNAME }}"
