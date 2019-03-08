@@ -7,6 +7,7 @@ sync_app_graphql_endpoint: "graphql"
 _apb_service_instance_id: 'dummy-service-instance-id'
 _apb_provision_creds: 
   SYNC_APP_NAME: "test"
+  GRAPHQL_ENDPOINT: "graphql"
 CLIENT_ID: test
 SYNC_APP_NAME: "test"
 SYNC_APP_PORT: 4000
