@@ -153,6 +153,7 @@
     fields:
       namespace: "{{ namespace }}"
       SYNC_APP_NAME: "{{ SYNC_APP_NAME }}"
+      GRAPHQL_ENDPOINT: "{{ sync_app_graphql_endpoint }}"
   when: encode_asb_binding
 
 - set_fact:
