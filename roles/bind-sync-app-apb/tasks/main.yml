@@ -36,7 +36,7 @@
       name: "sync-app-{{ _apb_provision_creds.SYNC_APP_NAME }}-{{ CLIENT_ID | lower }}"
       serviceInstanceID: '{{ _apb_service_instance_id }}'
     string_data:
-      uri: "https://{{ URI }}/{{ _apb_provision_creds.GRAPHQL_ENDPOINT }}"
+      uri: "https://{{ URI }}{{ _apb_provision_creds.GRAPHQL_ENDPOINT }}"
       config: "{{ config | to_json }}"
       name: "sync-app-{{ _apb_provision_creds.SYNC_APP_NAME }}-{{ CLIENT_ID | lower }}"
       type: "sync-app" 
