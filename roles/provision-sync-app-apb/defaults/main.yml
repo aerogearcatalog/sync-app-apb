@@ -2,6 +2,12 @@ sync_app_docker_image: "{{ SYNC_APP_DOCKER_IMAGE }}"
 sync_app_docker_image_version: "{{ SYNC_APP_DOCKER_IMAGE_VERSION | default('latest', true) }}"
 sync_app_metrics_endpoint: "{{ SYNC_APP_METRICS_ENDPOINT | default('', true) }}"
 sync_app_graphql_endpoint: "{{ SYNC_APP_GRAPHQL_ENDPOINT | default('', true) }}"
+db_hostname: "{{ DB_HOSTNAME | default('', true) }}"
+db_port: "{{ DB_PORT | default('', true) }}"
+db_username: "{{ DB_USERNAME | default('', true) }}"
+db_password: "{{ DB_PASSWORD | default('', true) }}"
+db_name: "{{ DB_NAME | default('', true) }}"
+db_ssl: "{{ DB_SSL | default('', true) }}"
 
 # Sync dashboard config
 dashboards_configmap: grafana-dashboards-configmap
