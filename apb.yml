@@ -32,56 +32,53 @@ plans:
         required: True
         title: Sync Application Docker image
       - name: SYNC_APP_DOCKER_IMAGE_VERSION
-        description: "(default value: 'latest') Version of your Sync Application Docker Image"
+        description: "Version of your Sync Application Docker Image"
         type: string
         required: False
         title: Sync Application Docker image version
         default: 'latest'
-      - name: SYNC_APP_HEALTH_ENDPOINT
-        description: "(default value: '') Health Endpoint of your Sync Application. Use 'health' for docker.io/aerogear/voyager-server-example-task image."
-        type: string
-        required: False
-        title: Sync Application health endpoint
-      - name: SYNC_APP_METRICS_ENDPOINT
-        description: "(default value: '/metrics') Metrics endpoint of your Sync Application"
-        type: string
-        required: False
-        title: Sync Application metrics endpoint
-        default: 'metrics'
       - name: SYNC_APP_PORT
         description: Port of the Sync Application to Expose. Use '4000' for docker.io/aerogear/voyager-server-example-task image.
         type: number
         required: True
         title: Sync App Port
+        default: 4000
+      - name: SYNC_APP_METRICS_ENDPOINT
+        description: "Metrics endpoint of your Sync Application. Format: \"/metrics\""
+        type: string
+        required: False
+        title: Sync Application metrics endpoint
+        default: '/metrics'
       - name: SYNC_APP_GRAPHQL_ENDPOINT
-        description: "(default value: 'graphql') GraphQL Endpoint of your Sync Application"
+        description: "GraphQL Endpoint of your Sync Application. Format: \"/graphql\""
         type: string
         required: False
         title: Sync App GraphQL Endpoint
+        default: '/graphql'
       - name: DB_HOSTNAME
         description: Hostname of the Database Server
         type: string
-        required: True
+        required: False
         title: Database Server Hostname
       - name: DB_PORT
         description: Port of the Database Server
         type: number
-        required: True
+        required: False
         title: Database Server Port
       - name: DB_USERNAME
         description: Username that will be used to connect to Database
         type: string
-        required: True
+        required: False
         title: Database Server Username
       - name: DB_PASSWORD
         description: Password that will be used to connect to Database
         type: string
-        required: True
+        required: False
         title: Database Server Password
       - name: DB_NAME
         description: Name of the Database
         type: string
-        required: True
+        required: False
         title: Database name
       - name: DB_SSL
         description: Use SSL connection to the Database Server
