@@ -1,5 +1,5 @@
-sync_app_docker_image: "{{ SYNC_APP_DOCKER_IMAGE }}"
-sync_app_docker_image_version: "{{ SYNC_APP_DOCKER_IMAGE_VERSION | default('latest', true) }}"
+sync_app_container_image: "{{ SYNC_APP_CONTAINER_IMAGE }}"
+sync_app_container_image_version: "{{ SYNC_APP_CONTAINER_IMAGE_VERSION | default('latest', true) }}"
 sync_app_metrics_endpoint: "{{ SYNC_APP_METRICS_ENDPOINT | default('', true) }}"
 sync_app_graphql_endpoint: "{{ SYNC_APP_GRAPHQL_ENDPOINT | default('', true) }}"
 db_hostname: "{{ DB_HOSTNAME | default('', true) }}"

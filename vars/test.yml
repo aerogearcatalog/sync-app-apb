@@ -1,7 +1,7 @@
 ---
 
-sync_app_docker_image: "docker.io/aerogear/voyager-server-example-basic"
-sync_app_docker_image_version: "latest"
+sync_app_container_image: "docker.io/aerogear/voyager-server-example-basic"
+sync_app_container_image_version: "latest"
 sync_app_metrics_endpoint: "/metrics"
 sync_app_graphql_endpoint: "/graphql"
 _apb_service_instance_id: 'dummy-service-instance-id'

@@ -35,13 +35,13 @@
         - "sync-app-{{ SYNC_APP_NAME }}"
         from:
           kind: ImageStreamTag
-          name: "sync-app-{{ SYNC_APP_NAME }}:{{ sync_app_docker_image_version }}"
+          name: "sync-app-{{ SYNC_APP_NAME }}:{{ sync_app_container_image_version }}"
           namespace: "{{ namespace }}"
       type: ImageChange
     - type: ConfigChange
     containers:
     - name: sync-app-{{ SYNC_APP_NAME }}
-      image: '{{ sync_app_docker_image }}:{{ sync_app_docker_image_version }}'
+      image: '{{ sync_app_container_image }}:{{ sync_app_container_image_version }}'
       imagePullPolicy: Always
       ports:
         - containerPort: '{{ SYNC_APP_PORT }}'
@@ -92,7 +92,7 @@
     tls_insecure_edge_termination_policy: Redirect
   register: sync_app_route
 
-- name: "Create ImageStream with tag {{ sync_app_docker_image_version }} for Sync App Docker Image"
+- name: "Create ImageStream with tag {{ sync_app_container_image_version }} for Sync App container image"
   openshift_v1_image_stream:
     name: "sync-app-{{ SYNC_APP_NAME }}"
     namespace: "{{ namespace }}"
@@ -100,10 +100,10 @@
       app: "sync-app-{{ SYNC_APP_NAME }}"
     lookup_policy_local: False
     tags:
-      - name: "{{ sync_app_docker_image_version }}"
+      - name: "{{ sync_app_container_image_version }}"
         from:
           kind: DockerImage
-          name: "{{ sync_app_docker_image }}:{{ sync_app_docker_image_version }}"
+          name: "{{ sync_app_container_image }}:{{ sync_app_container_image_version }}"
         importPolicy:
           scheduled: true
 
