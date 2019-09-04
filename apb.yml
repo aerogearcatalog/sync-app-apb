@@ -26,16 +26,16 @@ plans:
         pattern: "^[a-z][a-z0-9-]*[a-z0-9]$"
         required: True
         title: Sync Application Name
-      - name: SYNC_APP_DOCKER_IMAGE
-        description: URL of your GraphQL Server Docker Image, e.g. docker.io/aerogear/voyager-server-example-task
+      - name: SYNC_APP_CONTAINER_IMAGE
+        description: URL of your GraphQL Server container image, e.g. docker.io/aerogear/voyager-server-example-task
         type: string
         required: True
-        title: Sync Application Docker image
-      - name: SYNC_APP_DOCKER_IMAGE_VERSION
-        description: "Version of your Sync Application Docker Image"
+        title: Sync Application container image
+      - name: SYNC_APP_CONTAINER_IMAGE_VERSION
+        description: "Version of your Sync Application container image"
         type: string
         required: False
-        title: Sync Application Docker image version
+        title: Sync Application container image version
         default: 'latest'
       - name: SYNC_APP_PORT
         description: Port of the Sync Application to Expose. Use '4000' for docker.io/aerogear/voyager-server-example-task image.
